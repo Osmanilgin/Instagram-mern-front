@@ -29,7 +29,7 @@ function Profile() {
            <Flex direction="column">
                <Flex h='20%' w='100%' justify='center'> <Flex w='40%' justify='flex-end' align='center' >
                  <ProfilePicUpload onClick={uploadPP} m='4' size='2xl'  src={user?.result.imageUrl}></ProfilePicUpload> </Flex> <Flex w='60%' direction='column'>
-                  <Flex m='3'>{user?.result?.username}</Flex> <Flex m='3'>2 posts </Flex><Flex m='3'>{user?.result?.name}</Flex> </Flex> 
+                  <Flex m='3'>{user?.result?.username}</Flex> <Flex m='3'>{posts.map((post) => post.creator === user?.result?._id).length} posts </Flex><Flex m='3'>{user?.result?.name}</Flex> </Flex> 
                 </Flex> <CreatePost/> <Divider/>
             
              <Flex> <Grid mx={[,,"0","20%"]} mt="3" templateColumns="repeat(3, 1fr)" gap={[.5,1,1,6]}>
